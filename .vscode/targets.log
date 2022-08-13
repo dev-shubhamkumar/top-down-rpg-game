@@ -20,7 +20,7 @@ make game
 make[1]: *** No rule to make target `main.c', needed by `game'.  Stop.
 
 
-# Make data base, printed on Sat Aug 13 12:28:38 2022
+# Make data base, printed on Sat Aug 13 12:30:59 2022
 
 # Variables
 
@@ -48,6 +48,7 @@ RAYLIB_VERSION = 3.0.0
 @F = $(notdir $@)
 # makefile (from `Makefile', line 339)
 LDLIBS = -lraylib -framework OpenGL -framework OpenAL -framework Cocoa -framework IOKit
+ 
 # makefile
 CURDIR := /Users/shubham/Desktop/GameDev/top-down-game
 # makefile
@@ -173,7 +174,6 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 445
 # environment
- 
 XPC_SERVICE_NAME = application.com.microsoft.VSCode.4112114.4112120.D4350DF8-9235-4D49-82D7-4012A2601F47
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
@@ -325,13 +325,13 @@ game: main.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug 13 12:28:38 2022
+# Finished Make data base on Sat Aug 13 12:30:59 2022
 
  
 make: *** [all] Error 2
 
 
-# Make data base, printed on Sat Aug 13 12:28:38 2022
+# Make data base, printed on Sat Aug 13 12:30:59 2022
 
 # Variables
 
@@ -375,7 +375,6 @@ MAKEFILE_LIST :=  Makefile
 OBJ_DIR = obj
 # makefile (from `Makefile', line 57)
 BUILD_MODE = RELEASE
- 
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
@@ -495,7 +494,6 @@ HOMEBREW_PREFIX = /opt/homebrew
 # makefile (from `Makefile', line 146)
 EXAMPLE_RUNTIME_PATH = $(RAYLIB_RELEASE_PATH)
 # environment
- 
 HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
@@ -641,6 +639,7 @@ game: main.c
 	
 
 # files hash-table stats:
+ 
 # Load=8/1024=1%, Rehash=0, Collisions=0/26=0%
 # VPATH Search Paths
 
@@ -653,6 +652,6 @@ game: main.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug 13 12:28:38 2022
+# Finished Make data base on Sat Aug 13 12:30:59 2022
 
  
