@@ -6,13 +6,27 @@ int main()
     const int windowHeight{384};
     InitWindow(windowWidth, windowHeight, "Classy Class RPG");
 
+    // Imporing Map to the Raylib window
+    Texture2D map = LoadTexture("nature_tileset/OpenWorldMap24x24.png");
+
     SetTargetFPS(60);
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(WHITE);
 
+
+
+
+        // Drawing Map Texture to Raylib window in each frame
+        Vector2 mapPos{0.0, 0.0};
+        DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
+
+
+        
+
         EndDrawing();
     }
+
     CloseWindow();
 }
