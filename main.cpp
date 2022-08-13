@@ -13,13 +13,19 @@ int main()
 
     // Imporing Map to the Raylib window
     Texture2D map = LoadTexture("nature_tileset/OpenWorldMap24x24.png");
-
-
-
-
     // Demifing vector and speed for assinging position to map
     Vector2 mapPos{0.0, 0.0};
     float speed{4.0};
+
+
+
+
+    // Importing Character Texture to Raylib window
+    Texture2D knight = LoadTexture("characters/knight_idle_spritesheet.png");
+    Vector2 knightPos{
+        (float)windowWidth/2.0f - 4.0f * (0.5f * (float)knight.width/6.0f),
+        (float)windowHeight/2.0f - 4.0f * (0.5f * (float)knight.height)
+    };
 
     
 
@@ -33,7 +39,7 @@ int main()
 
 
 
-        // creating if else statments to take key inputs
+        // creating if else statments to take key inputs to move the map
         Vector2 direction{};
         if (IsKeyDown(KEY_A)) direction.x -= 1.0;
         if (IsKeyDown(KEY_D)) direction.x += 1.0;
@@ -55,6 +61,13 @@ int main()
 
         // Drawing Map Texture to Raylib window in each frame
         DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
+
+
+        // Drawing the charcater
+        Rectangle source{0.f, 0.f, (float)knight.width/6.f, (float)knight.height};
+        Rectangle dest{knightPos.x, knightPos.y, 4.0f * (float)knight.width/6.0f, 4.0f * (float)knight.height};
+        Vector2 origin{};
+        DrawTexturePro(knight, source, dest, origin, 0.f, WHITE);
 
 
         
