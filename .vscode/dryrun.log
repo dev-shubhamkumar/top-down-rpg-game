@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/shubham/Desktop/GameDev/top-down-game'
+make game
+ 
+make[1]: Entering directory `/Users/shubham/Desktop/GameDev/top-down-game'
+make[1]: Leaving directory `/Users/shubham/Desktop/GameDev/top-down-game'
+make: Leaving directory `/Users/shubham/Desktop/GameDev/top-down-game'
+ 
+make[1]: *** No rule to make target `main.c', needed by `game'.
+make: *** [all] Error 2
+
