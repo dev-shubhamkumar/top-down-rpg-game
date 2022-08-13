@@ -59,6 +59,9 @@ int main()
 
 
 
+        /*
+            IMPORTANT: ADDING THE DIFFERENT CHARACTERS, MAP AND OTHER ASSETS IN THE FRAME LOOP
+        */
         // Drawing Map Texture to Raylib window in each frame
         DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
 
