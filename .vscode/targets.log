@@ -20,11 +20,12 @@ make game
 make[1]: *** No rule to make target `main.c', needed by `game'.  Stop.
 
 
-# Make data base, printed on Sat Aug 13 12:30:59 2022
+# Make data base, printed on Sun Aug 14 16:54:35 2022
 
 # Variables
 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -48,7 +49,6 @@ RAYLIB_VERSION = 3.0.0
 @F = $(notdir $@)
 # makefile (from `Makefile', line 339)
 LDLIBS = -lraylib -framework OpenGL -framework OpenAL -framework Cocoa -framework IOKit
- 
 # makefile
 CURDIR := /Users/shubham/Desktop/GameDev/top-down-game
 # makefile
@@ -90,7 +90,7 @@ LDFLAGS = -L. -L/opt/homebrew/lib
 # makefile (from `Makefile', line 61)
 USE_EXTERNAL_GLFW = FALSE
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.YA0w1nQLkm/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.21DgIk9Kk5/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 374)
@@ -143,8 +143,9 @@ MAKE_VERSION := 3.81
 USER = shubham
 # makefile
 .DEFAULT_GOAL := all
+ 
 # environment
-TERM_SESSION_ID = A616320F-6C20-4E49-826C-C2EB26F65B4D
+TERM_SESSION_ID = 911984EB-0432-4E56-95E8-C117AD6A2B2F
 # makefile (from `Makefile', line 48)
 DESTDIR = /usr/local
 # automatic
@@ -174,7 +175,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 445
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.4112114.4112120.D4350DF8-9235-4D49-82D7-4012A2601F47
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.4112114.4112120.C14D5D6B-3E3F-4777-BFCF-AB301883AF06
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -218,7 +219,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 2585
+VSCODE_PID = 1333
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=7/218=3%
 
@@ -228,13 +229,13 @@ VSCODE_PID = 2585
 
 # Directories
 
-# /opt/homebrew/include (device 16777233, inode 1157518): 49 files, no impossibilities.
-# . (device 16777233, inode 4157333): 11 files, no impossibilities.
+# /opt/homebrew/include (device 16777234, inode 1157518): 49 files, no impossibilities.
+# . (device 16777234, inode 4157333): 15 files, no impossibilities.
 # ..\../src: could not be stat'd.
 # src: could not be stat'd.
-# /opt/homebrew/lib (device 16777233, inode 1157519): 95 files, no impossibilities.
+# /opt/homebrew/lib (device 16777234, inode 1157519): 95 files, no impossibilities.
 
-# 155 files, no impossibilities in 5 directories.
+# 159 files, no impossibilities in 5 directories.
 
 # Implicit Rules
 
@@ -325,17 +326,18 @@ game: main.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug 13 12:30:59 2022
+# Finished Make data base on Sun Aug 14 16:54:35 2022
 
  
 make: *** [all] Error 2
 
 
-# Make data base, printed on Sat Aug 13 12:30:59 2022
+# Make data base, printed on Sun Aug 14 16:54:35 2022
 
 # Variables
 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -400,7 +402,7 @@ LDFLAGS = -L. -L/opt/homebrew/lib
 # makefile (from `Makefile', line 61)
 USE_EXTERNAL_GLFW = FALSE
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.YA0w1nQLkm/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.21DgIk9Kk5/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 374)
@@ -444,6 +446,7 @@ MAKECMDGOALS := all
 # environment
 SHLVL = 3
 # makefile (from `Makefile', line 155)
+ 
 CC = clang++
 # makefile (from `Makefile', line 51)
 RAYLIB_H_INSTALL_PATH = $(DESTDIR)/include
@@ -454,7 +457,7 @@ USER = shubham
 # makefile
 .DEFAULT_GOAL := all
 # environment
-TERM_SESSION_ID = A616320F-6C20-4E49-826C-C2EB26F65B4D
+TERM_SESSION_ID = 911984EB-0432-4E56-95E8-C117AD6A2B2F
 # makefile (from `Makefile', line 48)
 DESTDIR = /usr/local
 # automatic
@@ -484,7 +487,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 445
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.4112114.4112120.D4350DF8-9235-4D49-82D7-4012A2601F47
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.4112114.4112120.C14D5D6B-3E3F-4777-BFCF-AB301883AF06
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -528,7 +531,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 2585
+VSCODE_PID = 1333
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=7/220=3%
 
@@ -538,13 +541,13 @@ VSCODE_PID = 2585
 
 # Directories
 
-# /opt/homebrew/include (device 16777233, inode 1157518): 49 files, no impossibilities.
-# . (device 16777233, inode 4157333): 11 files, no impossibilities.
+# /opt/homebrew/include (device 16777234, inode 1157518): 49 files, no impossibilities.
+# . (device 16777234, inode 4157333): 15 files, no impossibilities.
 # ..\../src: could not be stat'd.
 # src: could not be stat'd.
-# /opt/homebrew/lib (device 16777233, inode 1157519): 95 files, no impossibilities.
+# /opt/homebrew/lib (device 16777234, inode 1157519): 95 files, no impossibilities.
 
-# 155 files, no impossibilities in 5 directories.
+# 159 files, no impossibilities in 5 directories.
 
 # Implicit Rules
 
@@ -603,6 +606,7 @@ main.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 Makefile:
@@ -639,7 +643,6 @@ game: main.c
 	
 
 # files hash-table stats:
- 
 # Load=8/1024=1%, Rehash=0, Collisions=0/26=0%
 # VPATH Search Paths
 
@@ -652,6 +655,6 @@ game: main.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug 13 12:30:59 2022
+# Finished Make data base on Sun Aug 14 16:54:35 2022
 
  
