@@ -54,8 +54,8 @@ void Character::tick(float deltaTime)
 
 
     // Drawing the charcater
-    Rectangle source{frame * width/6.f, 0.f, rightLeft * width/6.f, height};
-    Rectangle dest{screenPos.x, screenPos.y, 4.0f * width/6.0f, 4.0f * height};
+    Rectangle source{frame * width, 0.f, rightLeft * width, height};
+    Rectangle dest{screenPos.x, screenPos.y, 4.0f * width, 4.0f * height};
     Vector2 origin{};
     DrawTexturePro(texture, source, dest, origin, 0.f, WHITE);
 }
