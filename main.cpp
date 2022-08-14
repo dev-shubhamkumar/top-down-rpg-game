@@ -23,8 +23,7 @@ int main()
 
 
     // Defining Character with help of defined class
-    Character knight;
-    knight.setScreenPos(windowWidth, windowHeight);
+    Character knight(windowWidth, windowHeight);
 
 
 
