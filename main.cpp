@@ -2,6 +2,9 @@
 #include "raymath.h"
 
 
+// ###########################################################################################
+// Defining Classes and its functions
+// ###########################################################################################
 class Character
 {
     public:
@@ -12,8 +15,8 @@ class Character
         Texture2D texture{LoadTexture("characters/knight_idle_spritesheet.png")};
         Texture2D idle{LoadTexture("characters/knight_idle_spritesheet.png")};
         Texture2D run{LoadTexture("characters/knight_run_spritesheet.png")};
-        Vector2 screenPos;
-        Vector2 worldPos;
+        Vector2 screenPos{};
+        Vector2 worldPos{};
         // 1 : facing right direction : -1 : facing left direction
         float rightLeft{1.f};
         // animation variables
@@ -66,47 +69,42 @@ void Character::tick(float deltaTime)
         runningTime = 0.f;
         if (frame > maxFrames) frame = 0;
     }
+
+
+    // Drawing the charcater
+    Rectangle source{frame * (float)texture.width/6.f, 0.f, rightLeft * (float)texture.width/6.f, (float)texture.height};
+    Rectangle dest{screenPos.x, screenPos.y, 4.0f * (float)texture.width/6.0f, 4.0f * (float)texture.height};
+    Vector2 origin{};
+    DrawTexturePro(texture, source, dest, origin, 0.f, WHITE);
 }
 
 
 
 
 
+
+// ###########################################################################################
+// Defining int main() function 
+// ###########################################################################################
 int main()
 {
     const int windowWidth{384};
     const int windowHeight{384};
     InitWindow(windowWidth, windowHeight, "Classy Class RPG");
 
-
-
-
     // Imporing Map to the Raylib window
     Texture2D map = LoadTexture("nature_tileset/OpenWorldMap24x24.png");
     // Demifing vector and speed for assinging position to map
     Vector2 mapPos{0.0, 0.0};
-    float speed{4.0};
 
 
 
 
-    // Importing Character Texture to Raylib window
-    Texture2D knight_idle = LoadTexture("characters/knight_idle_spritesheet.png");
-    Texture2D knight_run = LoadTexture("characters/knight_run_spritesheet.png");
-    Texture2D knight = LoadTexture("characters/knight_idle_spritesheet.png");
-    Vector2 knightPos{
-        (float)windowWidth/2.0f - 4.0f * (0.5f * (float)knight.width/6.0f),
-        (float)windowHeight/2.0f - 4.0f * (0.5f * (float)knight.height)
-    };
-    // 1 : facing right direction : -1 : facing left direction
-    float rightLeft{1.f};
-    // animation variables
-    float runningTime{};
-    int frame{};
-    const int maxFrames{6};
-    const float updateTime{1.f / 12.f};
+    // Defining Character with help of defined class
+    Character knight;
+    knight.setScreenPos(windowWidth, windowHeight);
 
-    
+
 
 
     SetTargetFPS(60);
@@ -116,32 +114,8 @@ int main()
         ClearBackground(WHITE);
 
 
-
-
-        // creating if else statments to take key inputs to move the map
-        Vector2 direction{};
-        if (IsKeyDown(KEY_A)) direction.x -= 1.0;
-        if (IsKeyDown(KEY_D)) direction.x += 1.0;
-        if (IsKeyDown(KEY_W)) direction.y -= 1.0;
-        if (IsKeyDown(KEY_S)) direction.y += 1.0;
-
-        if (IsKeyDown(KEY_LEFT)) direction.x -= 1.0;
-        if (IsKeyDown(KEY_RIGHT)) direction.x += 1.0;
-        if (IsKeyDown(KEY_UP)) direction.y -= 1.0;
-        if (IsKeyDown(KEY_DOWN)) direction.y += 1.0;
-        if (Vector2Length(direction) != 0.0)
-        {
-            // set mapPos = mapPos - direction
-            mapPos = Vector2Subtract(mapPos, Vector2Scale(Vector2Normalize(direction), speed));
-            direction.x < 0.f ? rightLeft = -1.f : rightLeft = 1.f;     // using terniary operator
-            knight = knight_run;
-        }
-        else
-        {
-            knight = knight_idle;
-        }
-
-
+        // Deriving mapPos from worldPos varibale 
+        mapPos = Vector2Scale(knight.getWorldPos(), -1.f);
 
 
         /*
@@ -149,26 +123,11 @@ int main()
         */
         // Drawing Map Texture to Raylib window in each frame
         DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
-
-
-        // upadate animation frame
-        runningTime += GetFrameTime();
-        if (runningTime >= updateTime)
-        {
-            frame++;
-            runningTime = 0.f;
-            if (frame > maxFrames) frame = 0;
-        }
-
-
-        // Drawing the charcater
-        Rectangle source{frame * (float)knight.width/6.f, 0.f, rightLeft * (float)knight.width/6.f, (float)knight.height};
-        Rectangle dest{knightPos.x, knightPos.y, 4.0f * (float)knight.width/6.0f, 4.0f * (float)knight.height};
-        Vector2 origin{};
-        DrawTexturePro(knight, source, dest, origin, 0.f, WHITE);
-
-
+        // Drawing the character
+        knight.tick(GetFrameTime());
         
+
+
 
         EndDrawing();
     }
