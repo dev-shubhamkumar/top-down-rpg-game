@@ -17,6 +17,7 @@ int main()
     Texture2D map = LoadTexture("nature_tileset/OpenWorldMap24x24.png");
     // Demifing vector and speed for assinging position to map
     Vector2 mapPos{0.0, 0.0};
+    const float mapScale{4.0f};
 
 
 
@@ -46,6 +47,18 @@ int main()
         DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
         // Drawing the character
         knight.tick(GetFrameTime());
+        /*
+            IMPORTANT: Adding condition to check if
+            our character has not crossed
+            the Map of the game
+        */
+        if (knight.getWorldPos().x < 0.f ||
+           knight.getWorldPos().y < 0.f ||
+           knight.getWorldPos().x + windowWidth > map.width * mapScale ||
+           knight.getWorldPos().y + windowHeight > map.height * mapScale)
+        {
+            knight.undoMovement();
+        }
         
 
 
