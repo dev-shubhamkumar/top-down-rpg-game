@@ -2,6 +2,7 @@
 #include "raymath.h"
 #include "Character.h"
 #include "Prop.h"
+#include "Enemy.h"
 
 
 
@@ -33,6 +34,16 @@ int main()
     Prop props[2]{
         Prop{Vector2{600.f, 300.f}, LoadTexture("nature_tileset/Rock.png")},
         Prop{Vector2{400.f, 500.f}, LoadTexture("nature_tileset/Log.png")},
+    };
+
+
+
+
+    // Defining Enemy
+    Enemy goblin{
+        Vector2{},
+        LoadTexture("characters/goblin_idle_spritesheet.png"),
+        LoadTexture("characters/goblin_run_spritesheet.png")
     };
 
 
@@ -83,6 +94,9 @@ int main()
                 knight.undoMovement();
             }
         }
+
+        // adding goblin (the enemy) animation frame
+        goblin.tick(GetFrameTime());
         
 
 
