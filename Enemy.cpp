@@ -23,16 +23,16 @@ void Enemy::tick(float deltaTime)
     */
     
     // STEP 1:  Get toTarget
-    Vector2 toTarget = Vector2Subtract(target->getScreenPos(), screenPos);
+    velocity = Vector2Subtract(target->getScreenPos(), getScreenPos());
 
-    // STEP 2:  normalize toTarget
-    toTarget = Vector2Normalize(toTarget);
+    // // STEP 2:  normalize toTarget
+    // toTarget = Vector2Normalize(toTarget);
 
-    // STEP 3:  multiply toTarget by speed
-    toTarget = Vector2Scale(toTarget, speed);
+    // // STEP 3:  multiply toTarget by speed
+    // toTarget = Vector2Scale(toTarget, speed);
 
-    // STEP 4:  move to enemy
-    worldPos = Vector2Add(worldPos, toTarget);
+    // // STEP 4:  move to enemy
+    // worldPos = Vector2Add(worldPos, toTarget);
 
     /*
         ################################################################################
@@ -42,8 +42,6 @@ void Enemy::tick(float deltaTime)
     
 
 
-
-    screenPos = Vector2Subtract(worldPos, target->getWorldPos());
     BaseCharacter::tick(deltaTime);
     
     // worldPosLastFrame = worldPos;
@@ -63,4 +61,9 @@ void Enemy::tick(float deltaTime)
     // Rectangle dest{screenPos.x, screenPos.y, scale * width, scale * height};
     // Vector2 origin{};
     // DrawTexturePro(texture, source, dest, origin, 0.f, WHITE);
+}
+
+Vector2 Enemy::getScreenPos()
+{
+    return Vector2Subtract(worldPos, target->getWorldPos());
 }
