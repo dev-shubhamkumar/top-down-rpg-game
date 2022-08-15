@@ -45,6 +45,11 @@ void Enemy::tick(float deltaTime)
 
 
     BaseCharacter::tick(deltaTime);
+
+    if (CheckCollisionRecs(target->getCollisionRec(), getCollisionRec()))
+    {
+        target->takeDamage(damagePerSec * deltaTime);
+    }
     
 }
 
