@@ -16,6 +16,8 @@ Enemy::Enemy(Vector2 pos, Texture2D idle_texture, Texture2D run_texture)
 
 void Enemy::tick(float deltaTime)
 {
+    if (!getAlive()) return;
+    
     /*
         ################################################################################
         START:      Writing Code for AI Logic to Chase Knight

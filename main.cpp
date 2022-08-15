@@ -98,6 +98,17 @@ int main()
 
         // adding goblin (the enemy) animation frame
         goblin.tick(GetFrameTime());
+
+
+
+
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        {
+            if (CheckCollisionRecs(goblin.getCollisionRec(), knight.getWeaponCollisionRec()))
+            {
+                goblin.setAlive(false);
+            }
+        }
         
 
 
