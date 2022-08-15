@@ -1,6 +1,7 @@
 #include "raylib.h"
 #include "raymath.h"
 #include "Character.h"
+#include "Prop.h"
 
 
 
@@ -28,6 +29,12 @@ int main()
 
 
 
+    // Defining Prop with help of defined class
+    Prop rock{Vector2{0.f, 0.f}, LoadTexture("nature_tileset/Rock.png")};
+
+
+
+
     SetTargetFPS(60);
     while (!WindowShouldClose())
     {
@@ -44,6 +51,9 @@ int main()
         */
         // Drawing Map Texture to Raylib window in each frame
         DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
+
+        rock.Render(knight.getWorldPos());
+
         // Drawing the character
         knight.tick(GetFrameTime());
         /*
