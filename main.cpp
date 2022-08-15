@@ -76,7 +76,13 @@ int main()
         }
 
         // check if our charcater is coliding with prop
-        
+        for (auto prop: props)
+        {
+            if (CheckCollisionRecs(prop.getCollisionRec(knight.getWorldPos()), knight.getCollisionRec()))
+            {
+                knight.undoMovement();
+            }
+        }
         
 
 
