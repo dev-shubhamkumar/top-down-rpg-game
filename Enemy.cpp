@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "raymath.h"
 
 
 Enemy::Enemy(Vector2 pos, Texture2D idle_texture, Texture2D run_texture)
@@ -10,10 +11,39 @@ Enemy::Enemy(Vector2 pos, Texture2D idle_texture, Texture2D run_texture)
 
     width = texture.width / maxFrames;
     height = texture.height;
+    speed = 3.5f;
 }
 
 void Enemy::tick(float deltaTime)
 {
+    /*
+        ################################################################################
+        START:      Writing Code for AI Logic to Chase Knight
+        ################################################################################
+    */
+    
+    // STEP 1:  Get toTarget
+    Vector2 toTarget = Vector2Subtract(target->getScreenPos(), screenPos);
+
+    // STEP 2:  normalize toTarget
+    toTarget = Vector2Normalize(toTarget);
+
+    // STEP 3:  multiply toTarget by speed
+    toTarget = Vector2Scale(toTarget, speed);
+
+    // STEP 4:  move to enemy
+    worldPos = Vector2Add(worldPos, toTarget);
+
+    /*
+        ################################################################################
+        END:        Writing Code for AI Logic to Chase Knight
+        ################################################################################
+    */
+    
+
+
+
+    screenPos = Vector2Subtract(worldPos, target->getWorldPos());
     BaseCharacter::tick(deltaTime);
     
     // worldPosLastFrame = worldPos;
