@@ -30,7 +30,10 @@ int main()
 
 
     // Defining Prop with help of defined class
-    Prop rock{Vector2{0.f, 0.f}, LoadTexture("nature_tileset/Rock.png")};
+    Prop props[2]{
+        Prop{Vector2{600.f, 300.f}, LoadTexture("nature_tileset/Rock.png")},
+        Prop{Vector2{400.f, 500.f}, LoadTexture("nature_tileset/Log.png")},
+    };
 
 
 
@@ -52,7 +55,10 @@ int main()
         // Drawing Map Texture to Raylib window in each frame
         DrawTextureEx(map, mapPos, 0.0, 4.0, WHITE);
 
-        rock.Render(knight.getWorldPos());
+        for (auto prop : props)
+        {
+            prop.Render(knight.getWorldPos());
+        }
 
         // Drawing the character
         knight.tick(GetFrameTime());
@@ -68,6 +74,9 @@ int main()
         {
             knight.undoMovement();
         }
+
+        // check if our charcater is coliding with prop
+        
         
 
 
