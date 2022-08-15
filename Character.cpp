@@ -14,7 +14,8 @@ Character::Character(int winWidth, int winHeight)
 
 void Character::tick(float deltaTime)
 {
-    worldPosLastFrame = worldPos;
+    BaseCharacter::tick(deltaTime);
+    // worldPosLastFrame = worldPos;
 
     // creating if else statments to take key inputs to move the map
     Vector2 direction{};
@@ -40,19 +41,19 @@ void Character::tick(float deltaTime)
     }
 
 
-    // upadate animation frame
-    runningTime += deltaTime;
-    if (runningTime >= updateTime)
-    {
-        frame++;
-        runningTime = 0.f;
-        if (frame > maxFrames) frame = 0;
-    }
+    // // upadate animation frame
+    // runningTime += deltaTime;
+    // if (runningTime >= updateTime)
+    // {
+    //     frame++;
+    //     runningTime = 0.f;
+    //     if (frame > maxFrames) frame = 0;
+    // }
 
 
-    // Drawing the charcater
-    Rectangle source{frame * width, 0.f, rightLeft * width, height};
-    Rectangle dest{screenPos.x, screenPos.y, scale * width, scale * height};
-    Vector2 origin{};
-    DrawTexturePro(texture, source, dest, origin, 0.f, WHITE);
+    // // Drawing the charcater
+    // Rectangle source{frame * width, 0.f, rightLeft * width, height};
+    // Rectangle dest{screenPos.x, screenPos.y, scale * width, scale * height};
+    // Vector2 origin{};
+    // DrawTexturePro(texture, source, dest, origin, 0.f, WHITE);
 }
